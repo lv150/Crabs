@@ -25,7 +25,7 @@ Purpose: drawLine plots a line from point p to point q with color. <br>
 drawLine extracts x and y coordinates for p and q and creates an array so that specific function input and other elements of the array can be accesssed. <br>
 Dependencies: None. <br>
 Call: handle = drawLine ( p, q, myColor) <br>
-Side Effects: None. <br>
+Side Effects: Draws a line. <br>
 <br>
 <br>
 
@@ -45,7 +45,7 @@ Purpose: getCapt computes and returns the captain centered a the origin with a h
 getCapt creates a capitain matrix with points located at x and y coordinates or (captSize, captSize). <br>
 Dependencies: None. <br> 
 Call: capt = getCapt (captSize) <br>
-Side Effects: None. <br>
+Side Effects: Creates Capt Matrix. <br>
 <br>
 <br>
 
