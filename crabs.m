@@ -8,10 +8,11 @@ function crabs ()
 
 % Initialize captain location, heading and size
 xCapt = 1000;
-yCapt = 500;
-thetaCapt = -pi/2;
+yCapt = 850;
+thetaCapt = pi/2;
 sizeCapt = 50;
 
+%straight up/original thetaCapt = -pi/2
 %theta is heading for capt = -pi/2 (-90degrees)
 % Draw the captain and initialize graphics handles
 

@@ -1,5 +1,5 @@
 function captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt)
-  
+
 % In the future, this function will draw the captain at the given
 % position (xCapt , yCapt) , with heading thetaCapt.
 % For now, it draws the captain at the (0, 0) with 0 heading.
@@ -14,8 +14,16 @@ capt = getCapt(sizeCapt);
 %gets the array of captain points (x, y, z), gets capt matrix
 
 % shift Captain to new location
+%T = getTranslation(xCapt,yCapt);
+%capt = T*capt;
+
+% rotates captain
+R = getRotation(thetaCapt);
+captRotated = R*capt;
+
+% shifts captain to a new location
 T = getTranslation(xCapt,yCapt);
-capt = T*capt;
+capt = T*captRotated
 
 
 
@@ -38,12 +46,12 @@ pt11=capt( : , 11);
 pt12=capt( : , 12);
 pt13=capt( : , 13);
 pt14=capt( : , 14);
-%pulling points for matrix uses colon to get everything indivdually 
+%pulling points for matrix uses colon to get everything indivdually
 
 % Draw the captain and set the return vector of graphics handles.
-%draw line between the points 
+%draw line between the points
 %k makes it black
-%captain graphic is a vector (row or column of numbers) adress to graphics of 
+%captain graphic is a vector (row or column of numbers) adress to graphics of
 %those lines
 captainGraphics(1) = drawLine(pt1 , pt2 , "k");
 captainGraphics(2) = drawLine(pt2 , pt3 , "k");
