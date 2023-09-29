@@ -49,6 +49,14 @@ Side Effects: Creates Capt Matrix. <br>
 <br>
 <br>
 
+Function: getRotation: number -> matrix <br>
+Purpose: getCapt computes and returns the captain centered a the origin with a heading angle of zero. The captain is returned in the form of a matrix with each column representing one point on the captain. The parameter captSize scales the drawing of the captain and sets it's size. <br>
+getCapt creates a capitain matrix with points located at x and y coordinates or (captSize, captSize). <br>
+Dependencies: None. <br> 
+Call: R = getRotation(theta) <br>
+Side Effects: None. <br>
+<br>
+<br>
 
 Function: getTranslation: number number -> matrix <br>
 Purpose: xCapt represents the amount to shift in the x direcetion and yCapt represent the amount to shift in the y direction. <br>
