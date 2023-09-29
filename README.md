@@ -13,7 +13,7 @@ Side Effects: None. <br>
 Function: drawCapt: number number number number -> vector <br>
 Purpose: drawCapt's purpose is to draw the captain at a given position with heading thetaCapt. drawCapt returns a vector of graphics handles called captainGraphics and draws lines between given points. <br>
 drawCapt uses getCapt to get the matrix of captain points and getTranslation to shift the Captain to a new location. <br>
-Dependencies: getCapt getTranslation <br>
+Dependencies: getCapt getTranslation getRotation <br>
 Call: captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt) <br>
 Side Effects: Draws Captain. <br>
 <br>
@@ -50,8 +50,8 @@ Side Effects: Creates Capt Matrix. <br>
 <br>
 
 Function: getRotation: number -> matrix <br>
-Purpose: getCapt computes and returns the captain centered a the origin with a heading angle of zero. The captain is returned in the form of a matrix with each column representing one point on the captain. The parameter captSize scales the drawing of the captain and sets it's size. <br>
-getCapt creates a capitain matrix with points located at x and y coordinates or (captSize, captSize). <br>
+Purpose: getRotation rotates the captain based on the number given for theta. <br>
+getRotation multiplies the capt matrix by theta after it has been translated through getTranslation. It returns the rotated capt handle and rotates the captain graphics. <br>
 Dependencies: None. <br> 
 Call: R = getRotation(theta) <br>
 Side Effects: None. <br>
