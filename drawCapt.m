@@ -23,7 +23,7 @@ captRotated = R*capt;
 
 % shifts captain to a new location
 T = getTranslation(xCapt,yCapt);
-capt = T*captRotated
+capt = T*captRotated;
 
 
 

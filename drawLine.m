@@ -12,7 +12,7 @@ x=[ p(1) ; q(1) ];
 y=[ p(2) ; q(2) ];
 
 %handle is identifier so machine can access handle on line. Like a label to access later.
-handle = plot(x,y,myColor)
+handle = plot(x,y,myColor);
 
 set(handle, "LineWidth", 3);
 

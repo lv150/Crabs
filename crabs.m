@@ -14,10 +14,10 @@ sizeCapt = 50;
 
 
 %initialize crab location, heading and size
-%xCrab = 1000;
-%yCrab = 1100;
-%thetaCrab = -pi/2;
-%sizeCrab = 50;
+xCrab = 1000;
+yCrab = 1100;
+thetaCrab = -pi/2;
+sizeCrab = 50;
 
 %theta is heading for capt = -pi/2 (-90degrees)
 % Draw the captain and initialize graphics handles
@@ -29,7 +29,7 @@ sizeCapt = 50;
 
 %draw intial captian and crab
 captGraphics = drawCapt (xCapt, yCapt, thetaCapt, sizeCapt);
-%crabGraphics = drawCrab(xCrab, yCrab,thetaCrab, sizeCrab);
+crabGraphics = drawCrab(xCrab, yCrab,thetaCrab, sizeCrab);
 
 
 %*********************************************************
@@ -47,39 +47,44 @@ while(cmd != "Q")
 if(cmd == "w" || cmd == "a" || cmd == "d")
 
   %erase old captain
-  %reads vector and returns a length from 1 to 9 the visible  parameter makes capt 
+  %reads vector and returns a length from 1 to 9 the visible  parameter makes capt
   %dissappear.
     for i=1:length(captGraphics)
       set(captGraphics(i), 'Visible', 'off');
     endfor
 
 %move captain
-  %xCapt = xCapt + 50 * cos(thetaCapt)
- % yCapt = yCapt + 50 * sin(thetaCapt)
+
   [xCapt,yCapt,thetaCapt] = moveCapt(cmd,xCapt,yCapt,thetaCapt,mapWidth,mapHeight,sizeCapt);
-%xCapt
-%yCapt
+
 
 %draw new captain
   captGraphics = drawCapt (xCapt, yCapt, thetaCapt, sizeCapt);
 
-%elseif (cmd == "i" || cmd == "j || cmd == "k" || cmd == "l" || cmd == ",") %crab has been moved
+   elseif (cmd == "i" || cmd == "j" || cmd == "k" || cmd == "l" || cmd == ",")
+  %crab has been moved
+
+      for i=1:length(crabGraphics)
+      set(crabGraphics(i), 'Visible', 'off');
+    endfor
 
   %erase old crab
-  %[xCrab,yCrab,thetaCrab] = moveCrab(cmd,xCrab,yCrab,thetaCrab,mapWidth,mapHeight,sizeCrab);
 
-  
+  [xCrab,yCrab,thetaCrab] = moveCrab(cmd,xCrab,yCrab,thetaCrab,mapWidth,mapHeight,sizeCrab);
+  %[xCrab,yCrab,thetaCrab] = moveCrab (cmd,x,y,theta,size,height,width)
+
   %draw new crab
-  %crabGraphics = drawCrab (xCrab, yCrab, thetaCrab, sizeCrab);
+
+  crabGraphics = drawCrab (xCrab, yCrab, thetaCrab, sizeCrab);
 
 
-  
-endif
 
-endwhile
+ endif
+
+ endwhile
 
 
 
 close all
-%clear
+ clear
 endfunction
