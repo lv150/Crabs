@@ -8,14 +8,14 @@ function [xCapt,yCapt,thetaCapt] = moveCrab (cmd,x,y,theta,size,height,width)
 %It's new heading.
 
 
-step = 10;
+cstep = 10;
 
 %r*(sin/cos (theta)) = new spot
 
 if(cmd == "j")
 
-  xTemp = x + step * sin(theta);
-  yTemp = y - step * cos(theta);
+  xTemp = x + cstep * sin(theta);
+  yTemp = y - cstep * cos(theta);
 
 
   if(mapCheck (xTemp,yTemp,size,height,width))
@@ -32,8 +32,8 @@ if(cmd == "j")
     
   elseif(cmd == "l")
   
-  xTemp = x - step * sin(theta);
-  yTemp = y + step * cos(theta);
+  xTemp = x - cstep * sin(theta);
+  yTemp = y + cstep * cos(theta);
   
   if(mapCheck (xTemp,yTemp,size,height,width))
   xCrab = xTemp;
@@ -49,8 +49,8 @@ if(cmd == "j")
   
   
   elseif(cmd == "k")
-  xTemp = x - step * cos(theta);
-  yTemp = y - step * sin(theta);
+  xTemp = x - cstep * cos(theta);
+  yTemp = y - cstep * sin(theta);
   
   if(mapCheck (xTemp,yTemp,size,height,width))
   xCrab = xTemp;
