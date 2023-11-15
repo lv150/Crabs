@@ -1,7 +1,7 @@
-
-function handle = drawLine ( p, q, myColor)
+function handle = drawLine (p,q)
 %{
 drawLine draws a line from point p to point q with color
+deleted from above (... myColor)
 %}
 
 
@@ -12,8 +12,10 @@ x=[ p(1) ; q(1) ];
 y=[ p(2) ; q(2) ];
 
 %handle is identifier so machine can access handle on line. Like a label to access later.
-handle = plot(x,y,myColor);
 
-set(handle, "LineWidth", 3);
+%plot ++ delete myColor again
+handle = plot(x,y);
+
+set(handle, "LineWidth", 2);
 
 endfunction
