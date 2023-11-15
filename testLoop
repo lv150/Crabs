@@ -1,0 +1,21 @@
+function testLoop ()
+cmd = "null"
+
+%while(cmd != "Q")
+% 1 stops the keyboard from waiting
+% 1 is true
+
+while(1)
+  % now it doesn't wait for the keyboard to type it just uses the loop
+  cmd = kbhit(1)
+       if(cmd == "Q"
+         break;
+        endif
+  %to give computer a break you put in a pause
+
+  pause(.1) 
+
+endwhile
+
+
+endfunction
