@@ -43,7 +43,7 @@ captPt6 = [ captSize; -captSize; 1]; % right shoulder
 
 %head
 captPt7 = [ captSize; -captSize/2; 1]; %right neck
-captPt8 = [ 2 *captSize; -captSize/2; 1]; %right top of head
+captPt8 = [ 2*captSize; -captSize/2; 1]; %right top of head
 captPt9 = [ 2*captSize; captSize/2; 1]; %left top of head
 captPt10 = [ captSize; captSize/2; 1]; %left neck
 
@@ -51,13 +51,25 @@ captPt10 = [ captSize; captSize/2; 1]; %left neck
 captPt11 = [ captSize; 2*captSize; 1]; %left hand
 captPt12 = [ captSize; -2*captSize; 1]; %right hand
 
-%spear
+%net handle
 captPt13=[ 2*captSize; -2*captSize; 1]; % spear point
 captPt14=[ -captSize; -2*captSize; 1]; % spear end
 
+%net
+captPt15=[ 3*captSize; -4*captSize; 1]; 
+captPt16=[ 5*captSize; -4*captSize; 1]; 
+captPt17=[ 5*captSize; -2*captSize; 1];
+captPt18=[ 5*captSize; 0; 1]; 
+captPt19=[ 3*captSize; 0; 1]; 
+
+
+%net center
+captPt20=[ 4*captSize; -2*captSize; 1];
+
 %captain matrix
 capt = [ captPt1, captPt2, captPt3, captPt4, captPt5, captPt6, captPt7, ...
-captPt8, captPt9, captPt10, captPt11, captPt12, captPt13, captPt14];
+captPt8, captPt9, captPt10, captPt11, captPt12, captPt13, captPt14, ...
+captPt15, captPt16, captPt17, captPt18, captPt19, captPt20];
 
 
 endfunction
