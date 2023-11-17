@@ -6,7 +6,7 @@ function crabs() %(level)
 while(restart)
 
       %draw start screen
-     level = drawStartScreen("OceanBlue2.png");
+     level = drawStartScreen("OceanBlue3.png");
 
 
       numJelly = level;
@@ -36,16 +36,8 @@ while(restart)
     thetaCrab = ones(1, numCrabs)*(-pi/2);
     isCrabsCaught = zeros(1,numCrabs);
     sizeCrab = 50;
-      %pointsCrab = 10;
 
-  %initialize jellyfish
-  %xJelly = rand*mapWidth;
-  %yJelly = 0;
-  %thetaJelly = -pi/2;
-  %sizeJelly = 30;
 
-  %theta is heading for capt = -pi/2 (-90degrees)
-  % Draw the captain and initialize graphics handles
 
 
    %initialize jelly  fish
@@ -141,19 +133,6 @@ while(restart)
       endfor
 
 
-  %   for k=1:numCrabs
-
-       %   if( getDist (xNet, yNet, xCrab(k), yCrab(k)) < 2 * sizeCapt && !isCrabsCaught(k) )
-          %      crabsCaught = crabsCaught + 1;
-          %      isCrabsCaught(k) = 1;
-                %l=length(crabGraphics(:,k)
-
-            %    for i=1: length(crabGraphics(:,k))
-            %     delete(crabGraphics(i,k));
-            %    endfor
-
-         % endif
-    %  endfor
 
           %check if captain gets stung by a jellyfish. If so drop his health.
      for j=1:numJelly
@@ -204,24 +183,6 @@ while(restart)
           %draw new captain
             [captGraphics, xNet, yNet] = drawCapt (xCapt, yCapt, thetaCapt, sizeCapt);
 
-      %elseif (cmd == "i" || cmd == "j" || cmd == "k" || cmd == "l" || cmd == ",")
-              %crab has been moved
-
-              %    for i=1:length(crabGraphics)
-               %   delete(crabGraphics(i));
-                  %set(crabGraphics(i), 'Visible', 'off');
-             %   endfor
-
-              %erase old crab
-
-             % [xCrab,yCrab,thetaCrab] = moveCrab(cmd,xCrab,yCrab,thetaCrab,sizeCrab,mapWidth,mapHeight);
-              %[xCrab,yCrab,thetaCrab] = moveCrab (cmd,x,y,theta,size,height,width)
-
-              %draw new crab
-
-            %  crabGraphics = drawCrab (xCrab, yCrab, thetaCrab, sizeCrab);
-
-
 
 
         %check if crab is caught make him disappear and create new one
@@ -252,10 +213,10 @@ while(restart)
 
   endwhile
 
-  pointsCapt
+
 
   %draw the endscreen here. If restart is requested, restart.
-  restart = drawEndScreen("OceanBlue3.png", crabsCaught, numCrabs);
+  restart = drawEndScreen("OceanBlue2.png", crabsCaught, numCrabs);
 
  endwhile
 

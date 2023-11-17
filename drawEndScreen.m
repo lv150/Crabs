@@ -1,11 +1,11 @@
 function restart = drawEndScreen (imgName,crabsCaught,numCrabs)
 
-    drawMap(imgName)
+    drawMap(imgName);
     hold on
       %text Let's Play
 
-      textLoc = [ 300, 800];
-      textHandle = text(textLoc(1),textLoc(2), strcat('Success! ', 'Total Crabs Caught: ', num2str(crabsCaught)), 'Fontsize', 12, 'Color', 'green');
+      textLoc = [ 500, 1300];
+      textHandle = text(textLoc(1),textLoc(2), strcat('Success! ', 'Total Crabs Caught: ', num2str(crabsCaught)), 'Fontsize', 20, 'Color', 'green');
       pause(5)
      %text do you want to play again y/n?
       delete(textHandle)
@@ -17,6 +17,10 @@ function restart = drawEndScreen (imgName,crabsCaught,numCrabs)
         commandwindow();
         cmd=kbhit(1);
 
+        yn = str2num(cmd);
+
+         textLoc = [500,1400];
+         textplayagain = text(textLoc(1), textLoc(2), strcat('Do you want to play again? y/n', num2str(yn)), 'Fontsize', 20, 'Color', 'green');
         if( cmd == 'y' || cmd == 'Y')
               restart = 1;
               break;
