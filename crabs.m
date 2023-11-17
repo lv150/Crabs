@@ -1,12 +1,12 @@
-function crabs (level)
+function crabs() %(level)
 % Crabs is a kids computer game where a fisherman, called the captain,
 % hunts for a very clever and powerful crab.
 
-% restart = 1;
-% while(restart)
+ restart = 1;
+while(restart)
 
       %draw start screen
-     % level = drawStartScreen("OceanBlue.png");
+     level = drawStartScreen("OceanBlue2.png");
 
 
       numJelly = level;
@@ -15,12 +15,12 @@ function crabs (level)
 
     % Draw the game map and initialize map dimensions.
 
-      [mapHeight , mapWidth] = drawMap( "BGImage.png" );
+     [mapHeight , mapWidth] = drawMap("BGImage.png");
 
       % Initialize captain location, heading and size
-      
-     
-    
+
+
+
     xCapt = 1000;
     yCapt = 850;
     thetaCapt = -pi/2;
@@ -54,8 +54,8 @@ function crabs (level)
   thetaJelly= ones(1,numJelly)*(-pi/2);
   sizeJelly = 25;
   jellySting= 2;
-  
-  
+
+
   %each entry is 0 to the mapWidth
 
 
@@ -65,38 +65,38 @@ function crabs (level)
 % Put your call to drawCapt() here ..... You must give drawCapt its
 % input and output arguments.
 
-%draw captian 
+%draw captian
   [captGraphics, xNet, yNet] = drawCapt (xCapt, yCapt, thetaCapt, sizeCapt);
   %crabGraphics = drawCrab(xCrab, yCrab,thetaCrab, sizeCrab);
-  
+
   % draw Crabs
   for k=1:numCrabs
     %if(!isCrabsCaught(k))
        crabGraphics(:,k) = drawCrab(xCrab(k), yCrab(k),thetaCrab(k), sizeCrab);
     %endif
   endfor
-  
-  
-    
+
+
+
   %draw jellyfish
   for j=1:numJelly
-    
+
     jellyGraphics(:,j) = drawJelly(xJelly(j),yJelly(j),thetaJelly(j),sizeJelly);
-    
+
     for i=1:length(jellyGraphics)
       delete(jellyGraphics(i,j));
     endfor
-    
+
       % move jellyfish
     [xJelly(j),yJelly(j),thetaJelly(j)] = moveJelly(level, xJelly(j), yJelly(j), thetaJelly(j), sizeJelly, mapHeight, mapWidth);
 
     % draw jellyfish
     jellyGraphics(:,j) = drawJelly(xJelly(j),yJelly(j),thetaJelly(j),sizeJelly);
-    
-  
+
+
   endfor
 
-%print health stats 
+%print health stats
   healthLoc = [100,100];
   crabsCaughtLoc = [100,175];
   healthStatus = text(healthLoc(1), healthLoc(2), strcat('Health = ', num2str(healthCapt)), 'FontSize', 14, 'Color', 'red');
@@ -115,18 +115,18 @@ function crabs (level)
         %remove old and plot new health and points status to screen
         delete(healthStatus);
         delete(crabsCaughtStatus);
-        
+
         healthStatus = text(healthLoc(1), healthLoc(2), strcat('Health = ', num2str(healthCapt)), 'FontSize', 14, 'Color', 'red');
        % pointsStatus = text(pointsLoc(1), pointsLoc(2), strcat('Points = ', num2str(pointsCapt)), 'FontSize', 12, 'Color', 'red');
         crabsCaughtStatus = text(crabsCaughtLoc(1), crabsCaughtLoc(2), strcat('Crabs Caught = ', num2str(crabsCaught)), 'FontSize', 14, 'Color', 'red');
 
-       
-       
+
+
          %draw jellyfish
-         
-         
-         
-      for j=1:numJelly   
+
+
+
+      for j=1:numJelly
          % erase old jellyfish
         for i=1:length(jellyGraphics(:,j))
           delete(jellyGraphics(i,j));
@@ -137,51 +137,51 @@ function crabs (level)
 
         % draw jellyfish
         jellyGraphics(:,j) = drawJelly(xJelly(j),yJelly(j),thetaJelly(j),sizeJelly);
-        
+
       endfor
-  
-      
-  %   for k=1:numCrabs 
-       
+
+
+  %   for k=1:numCrabs
+
        %   if( getDist (xNet, yNet, xCrab(k), yCrab(k)) < 2 * sizeCapt && !isCrabsCaught(k) )
           %      crabsCaught = crabsCaught + 1;
           %      isCrabsCaught(k) = 1;
                 %l=length(crabGraphics(:,k)
-              
+
             %    for i=1: length(crabGraphics(:,k))
             %     delete(crabGraphics(i,k));
             %    endfor
-              
-         % endif 
+
+         % endif
     %  endfor
-        
+
           %check if captain gets stung by a jellyfish. If so drop his health.
      for j=1:numJelly
           if( getDist(xJelly(j),yJelly(j),xCapt,yCapt) < 5*sizeCapt )
               healthCapt = healthCapt - jellySting;
           endif
-      
+
      endfor
-      
-         
-          
-          
-          
+
+
+
+
+
            %check if captain still has health status
           if(healthCapt < 0)
              break;
-          endif 
-      
+          endif
+
         %read keyboard
       cmd = kbhit(1);
-      
+
       commandwindow();
-      
+
       if(cmd == "Q" || healthCapt < 0 || crabsCaught == numCrabs) %||(getDist(xCrab,yCrab,xCapt,yCapt) <= 10))
        %restart = 0;
        break;
       endif
-     
+
        %read keyboard
       %cmd = kbhit(1);
     %respond to keyboard commands
@@ -190,7 +190,7 @@ function crabs (level)
             %erase old captain
             %reads vector and returns a length from 1 to 9 the visible  parameter makes capt
             %dissappear.
-            
+
               for i=1:length(captGraphics)
                 delete(captGraphics(i));
                 %set(captGraphics(i), 'Visible', 'off');
@@ -226,22 +226,22 @@ function crabs (level)
 
         %check if crab is caught make him disappear and create new one
         for k=1:numCrabs
-          
+
                 %getDist (xNet, yNet, xCrab(k), yCrab(k))
                  if( !isCrabsCaught(k) && getDist (xNet, yNet, xCrab(k), yCrab(k)) < 2*sizeCapt) %crab is caught
-                  
+
                     crabsCaught = crabsCaught + 1;
-                     
+
                     isCrabsCaught(k) = 1;
-                    
+
                     %crabsCaught = sum(isCrabsCaught);
-                     
-                     
+
+
                      %erase old crab
                          for i=1 : length(crabGraphics(:,k))
                            delete(crabGraphics(i,k));
                          endfor
-                     
+
                  endif
         endfor
     endif
@@ -249,17 +249,17 @@ function crabs (level)
 
           fflush(stdout);
           pause(.01);
-          
+
   endwhile
 
-  %pointsCapt
+  pointsCapt
 
   %draw the endscreen here. If restart is requested, restart.
-  %restart = drawEndScreen("OceanBlue.png", crabsCaught, numCrabs);
+  restart = drawEndScreen("OceanBlue3.png", crabsCaught, numCrabs);
 
- %endwhile
+ endwhile
 
   close all
    clear
- 
+
 endfunction
