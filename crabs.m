@@ -25,7 +25,7 @@ while(restart)
     yCapt = 850;
     thetaCapt = -pi/2;
     sizeCapt = 50;
-    healthCapt = 100;
+    healthCapt = 50;
     pointsCapt = 0;
     crabsCaught = 0;
 
@@ -45,7 +45,7 @@ while(restart)
    yJelly = rand(1, numJelly)*mapHeight;
   thetaJelly= ones(1,numJelly)*(-pi/2);
   sizeJelly = 25;
-  jellySting= 2;
+  jellySting = 5;
 
 
   %each entry is 0 to the mapWidth

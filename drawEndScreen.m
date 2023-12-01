@@ -4,7 +4,7 @@ function restart = drawEndScreen (imgName,crabsCaught,numCrabs)
     hold on
       %text Let's Play
 
-      textLoc = [ 500, 1300];
+      textLoc = [ 500, 1000];
       textHandle = text(textLoc(1),textLoc(2), strcat('Success! ', 'Total Crabs Caught: ', num2str(crabsCaught)), 'Fontsize', 20, 'Color', 'green');
       pause(5)
      %text do you want to play again y/n?
@@ -19,7 +19,7 @@ function restart = drawEndScreen (imgName,crabsCaught,numCrabs)
 
         yn = str2num(cmd);
 
-         textLoc = [500,1400];
+         textLoc = [500,1100];
          textplayagain = text(textLoc(1), textLoc(2), strcat('Do you want to play again? y/n', num2str(yn)), 'Fontsize', 20, 'Color', 'green');
         if( cmd == 'y' || cmd == 'Y')
               restart = 1;

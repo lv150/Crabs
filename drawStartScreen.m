@@ -5,7 +5,7 @@ function level = drawStartScreen (imgName)
 
   hold on
 
-  textLoc = [ 700, 1300];
+  textLoc = [ 700, 900];
   textHandle = text(textLoc(1),textLoc(2), strcat('Select a level: 1-9'), 'Fontsize', 20, 'Color', 'green');
 
     %read keyboard
@@ -24,7 +24,7 @@ function level = drawStartScreen (imgName)
    endwhile
 
 
-   levelLoc = [550,1400];
+   levelLoc = [550,1000];
    text(levelLoc(1), levelLoc(2), strcat("Selected level: ", num2str(level)), 'Fontsize', 30, 'Color', 'green')
    pause(2)
   hold off
