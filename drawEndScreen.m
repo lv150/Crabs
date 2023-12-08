@@ -5,7 +5,7 @@ function restart = drawEndScreen (imgName,crabsCaught,numCrabs)
       %text Let's Play
 
       textLoc = [ 500, 1000];
-      textHandle = text(textLoc(1),textLoc(2), strcat('Success! ', 'Total Crabs Caught: ', num2str(crabsCaught)), 'Fontsize', 20, 'Color', 'green');
+      textHandle = text(textLoc(1),textLoc(2), strcat('Total Crabs Caught: ', num2str(crabsCaught)), 'Fontsize', 20, 'Color', 'green');
       pause(5)
      %text do you want to play again y/n?
       delete(textHandle)
